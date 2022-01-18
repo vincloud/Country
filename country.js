@@ -35,8 +35,6 @@ function populateValues(country) {
 }
 
 
-
-
 var select = document.querySelector("#select")
 
 fetch(`https://restcountries.com/v2/all`).
@@ -56,7 +54,7 @@ function fetchname(countries) {
 function selectCountry() {
   let countryname = document.querySelector("#select").value
   fetch(`https://restcountries.com/v2/name/${countryname}?fullText=true`).
-    then(res => res.json).
+    then(res => res.json()).
     then(data => populateValues(data))
 }
 
